@@ -1,16 +1,22 @@
 class pam::params {
 
-  $package_name="pam"
-  $service_name="pam"
-
   case $::osfamily
   {
     'redhat':
     {
       case $::operatingsystemrelease
       {
-        /^[5-7].*$/:
+        /^[56].*$/:
         {
+          $cracklib_package_name = undef
+          $pwqualityconf = undef
+          $pamcracklib = true
+        }
+        /^[7].*$/:
+        {
+          $cracklib_package_name = 'libpwquality'
+          $pwqualityconf = '/etc/security/pwquality.conf'
+          $pamcracklib = false
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -25,6 +31,7 @@ class pam::params {
           {
             /^14.*$/:
             {
+              fail('not implemented')
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
