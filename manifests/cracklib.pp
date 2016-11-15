@@ -15,6 +15,6 @@ class pam::cracklib(
 
   class { '::pam::cracklib::install': } ->
   class { '::pam::cracklib::config': } ->
-  Class['::cracklib']
+  Class['::pam::cracklib']
 
 }
