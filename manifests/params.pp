@@ -1,5 +1,7 @@
 class pam::params {
 
+  $pam_package_name='pam'
+
   case $::osfamily
   {
     'redhat':
