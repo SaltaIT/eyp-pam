@@ -11,7 +11,8 @@ class pam::params {
       {
         /^5.*$/:
         {
-          $password_hash_algo_default = 'sha512'
+          # not sure
+          $password_hash_algo_default = 'md5'
           $cracklib_package_name = undef
           $pwqualityconf = undef
           $pamcracklib = true
