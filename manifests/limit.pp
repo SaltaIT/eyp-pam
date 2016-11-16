@@ -2,7 +2,7 @@ define pam::limit ( $item, $value, $domain=$name, $type='-' ) {
 
   #
   concat::fragment{ "limits.conf ${domain} ${name} ${type} ${item} ${value}":
-    target  => $limits::params::limits_conf,
+    target  => $pam::params::limits_conf,
     order   => '01',
     content => template("${module_name}/limits/limit.erb"),
   }

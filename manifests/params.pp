@@ -1,5 +1,7 @@
 class pam::params {
 
+  $limits_conf='/etc/security/limits.conf'
+
   case $::osfamily
   {
     'redhat':

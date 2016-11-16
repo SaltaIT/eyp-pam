@@ -4,7 +4,7 @@
 #
 class pam::config inherits pam {
 
-  concat { $limits::params::limits_conf:
+  concat { $pam::params::limits_conf:
     ensure  => 'present',
     owner   => 'root',
     group   => 'root',
@@ -12,7 +12,7 @@ class pam::config inherits pam {
   }
 
   concat::fragment{ 'limits.conf header':
-    target  => $limits::params::limits_conf,
+    target  => $pam::params::limits_conf,
     order   => '00',
     content => template("${module_name}/limits/limits_header.erb"),
   }
