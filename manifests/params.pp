@@ -26,6 +26,10 @@ class pam::params {
           $pwqualityconf = undef
           $pamcracklib = true
           $pam_lockout='faillock'
+          $authconfig_systemauth_custom_file='/etc/pam.d/system-auth-local'
+          $authconfig_systemauth_template="${module_name}/lockout/faillock/systemauth.erb"
+          $authconfig_password_custom_file='/etc/pam.d/password-auth-local'
+          $authconfig_password_template="${module_name}/lockout/faillock/password.erb"
         }
         /^7.*$/:
         {
@@ -34,6 +38,10 @@ class pam::params {
           $pwqualityconf = '/etc/security/pwquality.conf'
           $pamcracklib = false
           $pam_lockout='faillock'
+          $authconfig_systemauth_custom_file='/etc/pam.d/system-auth-local'
+          $authconfig_systemauth_template="${module_name}/lockout/faillock/systemauth.erb"
+          $authconfig_password_custom_file='/etc/pam.d/password-auth-local'
+          $authconfig_password_template="${module_name}/lockout/faillock/password.erb"
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
