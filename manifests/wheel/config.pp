@@ -2,7 +2,7 @@
 # [root@centos7 sites]# authconfig --test | grep "password hashing algorithm" | awk '{ print $NF }'
 # md5
 #
-class pam::wheel::config inherits pam::unix {
+class pam::wheel::config inherits pam::wheel {
 
   Exec {
     path => '/bin:/sbin:/usr/bin:/usr/sbin',

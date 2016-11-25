@@ -2,6 +2,6 @@
 #
 # === pam::install documentation
 #
-class pam::wheel::install inherits pam::unix {
+class pam::wheel::install inherits pam::wheel {
 
 }
