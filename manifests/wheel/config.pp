@@ -16,14 +16,14 @@ class pam::wheel::config inherits pam::unix {
   {
     exec { 'limit su to wheel group':
       command => "sed 's/^#\\(auth[ \\t]*required[ \\t]*pam_wheel.so[ \\t]*use_uid.*\\)$/\\1/' -i ${pam::params::pamd_su}",
-      unless  => "grep -P \"auth[ \t]*required[ \t]*pam_wheel.so[ \t]*use_uid\" ${pam::params::pamd_su}",
+      unless  => "grep -P \"^auth[ \t]*required[ \t]*pam_wheel.so[ \t]*use_uid\" ${pam::params::pamd_su}",
     }
   }
   else
   {
     exec { 'limit su to wheel group':
       command => "sed 's/^\\(auth[ \\t]*required[ \\t]*pam_wheel.so[ \\t]*use_uid.*\\)$/#\\1/' -i ${pam::params::pamd_su}",
-      unless  => "grep -P \"#auth[ \t]*required[ \t]*pam_wheel.so[ \t]*use_uid\" ${pam::params::pamd_su}",
+      unless  => "grep -P \"^#auth[ \t]*required[ \t]*pam_wheel.so[ \t]*use_uid\" ${pam::params::pamd_su}",
     }
   }
 
