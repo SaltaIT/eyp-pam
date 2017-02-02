@@ -14,7 +14,7 @@ describe 'pam class' do
 
       class { 'pam::unix': }
 
-      class { 'pam::lockout': }
+      # class { 'pam::lockout': }
 
       class { 'pam::wheel': }
 
