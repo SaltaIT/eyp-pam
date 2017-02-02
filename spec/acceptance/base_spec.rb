@@ -12,7 +12,7 @@ describe 'pam class' do
 
       class { 'pam::cracklib': }
 
-      class { 'pam::unix': }
+      # class { 'pam::unix': }
 
       # class { 'pam::lockout': }
 
