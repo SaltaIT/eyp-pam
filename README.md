@@ -34,8 +34,7 @@ management, etc.) this is the time to mention it.
 ### What pam affects
 
 * /etc/security/limits.conf
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* system-auth config (/etc/pam.d)
 
 ### Setup Requirements
 
