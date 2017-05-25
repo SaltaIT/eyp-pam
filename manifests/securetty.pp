@@ -6,10 +6,10 @@ define pam::securetty (
   if(!defined(Concat['/etc/securetty']))
   {
     concat { '/etc/securetty':
-      ensure  => 'present',
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0600',
+      ensure => 'present',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0600',
     }
   }
 
