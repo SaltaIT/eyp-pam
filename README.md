@@ -17,7 +17,7 @@
 
 ## Overview
 
-PAM modules and /etc/security/limits.conf management
+PAM modules, /etc/security/limits.conf and /etc/securetty management
 
 ## Module Description
 
