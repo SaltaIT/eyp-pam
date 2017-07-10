@@ -1,5 +1,5 @@
 define pam::securetty (
-                        $tty = $name,
+                        $tty   = $name,
                         $order = '42',
                       ) {
 
@@ -13,7 +13,7 @@ define pam::securetty (
     }
   }
 
-  if($tty!='')
+  if(!empty($tty))
   {
     concat::fragment { "securetty ${tty}":
       target  => '/etc/securetty',
