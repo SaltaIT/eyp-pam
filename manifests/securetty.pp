@@ -1,6 +1,7 @@
 define pam::securetty (
                         $tty   = $name,
                         $order = '42',
+                        $empty = false,
                       ) {
 
   if(!defined(Concat['/etc/securetty']))
@@ -13,7 +14,7 @@ define pam::securetty (
     }
   }
 
-  if(!empty($tty))
+  if(!$empty)
   {
     concat::fragment { "securetty ${tty}":
       target  => '/etc/securetty',
