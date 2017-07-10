@@ -13,10 +13,12 @@ define pam::securetty (
     }
   }
 
-  concat::fragment { "securetty ${tty}":
-    target  => '/etc/securetty',
-    order   => $order,
-    content => "${tty}\n",
+  if($tty!='')
+  {
+    concat::fragment { "securetty ${tty}":
+      target  => '/etc/securetty',
+      order   => $order,
+      content => "${tty}\n",
+    }
   }
-
 }
