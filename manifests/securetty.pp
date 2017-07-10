@@ -1,7 +1,7 @@
+# puppet2sitepp @securettys
 define pam::securetty (
                         $tty   = $name,
                         $order = '42',
-                        $empty = false,
                       ) {
 
   if(!defined(Concat['/etc/securetty']))
@@ -14,7 +14,7 @@ define pam::securetty (
     }
   }
 
-  if(!$empty)
+  if(!empty($tty))
   {
     concat::fragment { "securetty ${tty}":
       target  => '/etc/securetty',
