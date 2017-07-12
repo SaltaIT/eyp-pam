@@ -12,8 +12,8 @@ class pam::lockout(
                       $service_ensure        = 'running',
                       $service_enable        = true,
                       $even_deny_root        = false,
-                      $unlock_time           = '600',
-                      $deny_failed           = '3',
+                      $unlock_time           = '900',
+                      $deny_failed           = '5',
                       $silent                = true,
                       $user_whitelist        = undef,
                     ) inherits pam::params{

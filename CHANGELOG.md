@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.13
+
+* changed default settings for **pam::lockout**
+
 ## 0.1.12
 
 * allow empty securetty file
