@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.14
+
+* improved CIS support
+
 ## 0.1.13
 
 * changed default settings for **pam::lockout**
