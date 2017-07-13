@@ -14,7 +14,8 @@ class pam::lockout (
                       $even_deny_root        = false,
                       $unlock_time           = '900',
                       $deny_failed           = '5',
-                      $silent                = true,
+                      $silent_preauth        = true,
+                      $silent_authfail       = false,
                       $user_whitelist        = undef,
                     ) inherits pam::params{
 
