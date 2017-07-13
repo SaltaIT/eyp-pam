@@ -2,7 +2,7 @@
 
 ## 0.1.14
 
-* improved CIS support
+* improved CIS support by setting an arbitrary option order
 
 ## 0.1.13
 
