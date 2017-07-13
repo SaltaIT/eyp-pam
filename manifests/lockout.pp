@@ -4,7 +4,7 @@
 # pam_tally2
 # http://myexperienceswithunix.blogspot.com.es/2016/09/locking-user-accounts-with-pam-faillock.html
 #
-class pam::lockout(
+class pam::lockout (
                       $manage_package        = true,
                       $package_ensure        = 'installed',
                       $manage_service        = true,
