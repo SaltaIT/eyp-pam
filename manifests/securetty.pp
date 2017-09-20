@@ -1,4 +1,6 @@
 # puppet2sitepp @securettys
+# @param tty tty name (default: resource's name)
+# @param order securetty order (default: 42)
 define pam::securetty (
                         $tty   = $name,
                         $order = '42',
