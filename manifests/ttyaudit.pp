@@ -1,8 +1,12 @@
 #
+# @param ensure enable/disable pam_tty_audit (default: present)
+# @param enable array of userts to enable pam_tty_audit
+# @param disable array of users without pam_tty_audit (default: empty array)
+#
 class pam::ttyaudit (
                       $ensure  = 'present',
-                      $disable = [],
                       $enable  = [ '*' ],
+                      $disable = [],
                     ) inherits pam::params {
 
   if($enable!=undef)
