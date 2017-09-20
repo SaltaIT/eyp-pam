@@ -1,8 +1,8 @@
 #
 class pam::ttyaudit (
+                      $ensure  = 'present',
                       $disable = [],
                       $enable  = [ '*' ],
-                      $ensure  = 'present',
                     ) inherits pam::params {
 
   if($enable!=undef)
