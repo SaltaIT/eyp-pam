@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.16
+
+* added ensure to **pam::securetty**
+
 ## 0.1.15
 
 * added ensure to **pam::ttyaudit**
