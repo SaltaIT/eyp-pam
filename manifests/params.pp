@@ -72,6 +72,10 @@ class pam::params {
               $cracklib_package_name = 'libpam-pwquality'
               $pwqualityconf = '/etc/security/pwquality.conf'
               $pamcracklib = false
+
+              # root@croscat:~# apt-file search pam_pwhistory.so
+              # libpam-modules: /lib/x86_64-linux-gnu/security/pam_pwhistory.so
+
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
