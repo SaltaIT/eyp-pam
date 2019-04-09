@@ -48,8 +48,8 @@ class pam::unix::config inherits pam::unix {
       }
 
       exec { 'the north remembers':
-        command => "sed 's/\\(password[ ]*required[ ]*pam_pwhistory.so[ ]*remember=\\)[0-9]*/\\1${pam::unix::remember}/g'",
-        unless  => "grep -E 'password[ ]*required[ ]*pam_pwhistory.so[ ]*remember=${pam::unix::remember}\\b'",
+        command => "sed 's/\\(password[ ]*required[ ]*pam_pwhistory.so[ ]*remember=\\)[0-9]*/\\1${pam::unix::remember}/g' -i ${pam::params::pwhistory_pamd}",
+        unless  => "grep -E 'password[ ]*required[ ]*pam_pwhistory.so[ ]*remember=${pam::unix::remember}\\b' ${pam::params::pwhistory_pamd}",
         require => Exec['red wedding'],
       }
 
