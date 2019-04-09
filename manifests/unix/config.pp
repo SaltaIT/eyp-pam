@@ -53,6 +53,8 @@ class pam::unix::config inherits pam::unix {
         require => Exec['red wedding'],
       }
 
+      #TODO: ${pam::unix::password_hash_algo}
+
     }
     else
     {
