@@ -1,7 +1,3 @@
-# == Class: pam
-#
-# === pam documentation
-#
 class pam(
           $manage_package         = true,
           $package_ensure         = 'installed',

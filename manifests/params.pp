@@ -11,6 +11,7 @@ class pam::params {
       $pam_systemauth_system='/etc/pam.d/system-auth-ac'
       $pam_package_name='pam'
       $use_authconfig=true
+      $use_pwhistory=false
       case $::operatingsystemrelease
       {
         /^5.*$/:
@@ -59,6 +60,8 @@ class pam::params {
     {
       $pam_package_name='libpam-modules'
       $use_authconfig=false
+      $use_pwhistory=true
+      $pwhistory_pamd='/etc/pam.d/common-password'
       case $::operatingsystem
       {
         'Ubuntu':
@@ -89,6 +92,7 @@ class pam::params {
       $pam_package_name='pam'
       #TODO:
       $use_authconfig=false
+      $use_pwhistory=false
     }
     default: { fail('Unsupported OS!')  }
   }
