@@ -45,6 +45,10 @@ class pam::lockout::config inherits pam::lockout {
         }
       }
     }
+    'tally2':
+    {
+      fail('TODO')
+    }
     default:
     {
       fail("${pam::params::pam_lockout} currently not implemented")
