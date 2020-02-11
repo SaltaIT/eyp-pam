@@ -51,12 +51,12 @@ class pam::lockout::config inherits pam::lockout {
       exec { 'update common account':
         command => "sed 's/\\(^account.*pam_unix\\.so.*$\\)/\\naccount required pam_tally2.so\\n\\n\\1\\n/' -i /etc/pam.d/common-account",
         unless  => "grep -P 'account required pam_tally2.so' /etc/pam.d/common-account",
-
+      }
+      
       # /etc/pam.d/common-auth
       exec { 'update common auth':
         command => "sed 's/\\(^auth.*pam_unix\\.so.*$\\)/auth required pam_tally2.so deny=${pam::lockout::deny_failed} unlock_time=${pam::lockout::unlock_time}\\n\\n\\1/' -i /etc/pam.d/common-auth",
         unless  => "grep -E 'auth required pam_tally2.so deny=${pam::lockout::deny_failed} unlock_time=${pam::lockout::unlock_time}' /etc/pam.d/common-auth",
-      }
       }
     }
     default:
