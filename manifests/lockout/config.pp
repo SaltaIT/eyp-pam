@@ -47,7 +47,11 @@ class pam::lockout::config inherits pam::lockout {
     }
     'tally2':
     {
-      fail('TODO')
+      # sed 's/\(^account.*pam_unix\.so.*$\)/\naccount required pam_tally2.so\n\n\1\n/'
+      exec { 'update commond account':
+        command => "sed 's/\\(^account.*pam_unix\\.so.*$\\)/\\naccount required pam_tally2.so\\n\\n\\1\\n/' -i /etc/pam.d/common-account",
+        unless  => "grep -P 'account required pam_tally2.so'",
+      }
     }
     default:
     {
