@@ -4,9 +4,9 @@
   "author": "eyp",
   "summary": "PAM modules, /etc/security/limits.conf and /etc/securetty management",
   "license": "Apache-2.0",
-  "source": "https://github.com/NTTCom-MS/eyp-pam",
-  "project_page": "https://github.com/NTTCom-MS/eyp-pam",
-  "issues_url": "https://github.com/NTTCom-MS/eyp-pam/issues",
+  "source": "https://github.com/SaltaIT/eyp-pam",
+  "project_page": "https://github.com/SaltaIT/eyp-pam",
+  "issues_url": "https://github.com/SaltaIT/eyp-pam/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
     {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"},
